@@ -803,10 +803,10 @@ class OAuthenticator(Authenticator):
             "grant_type": "authorization_code",
             "redirect_uri": self.get_callback_url(handler),
             "data": data,
-            "scope": self.scope,
+            "scope": " ".join(self.scope),
         }
-        # debug print scope
-        self.log.info("scope: %s", self.scope)
+        # debug print params
+        self.log.debug("OAuth params: %s", params)
 
         # the client_id and client_secret should not be included in the access token request params
         # when basic authentication is used
