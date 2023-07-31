@@ -806,7 +806,7 @@ class OAuthenticator(Authenticator):
             "scope": " ".join(self.scope),
         }
         # debug print params
-        self.log.debug("OAuth params: %s", params)
+        self.log.info("OAuth params: %s", params)
 
         # the client_id and client_secret should not be included in the access token request params
         # when basic authentication is used
